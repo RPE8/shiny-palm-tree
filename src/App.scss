@@ -1,3 +1,5 @@
+$App-header-bgColor: white;
+
 .App {
   text-align: center;
 }
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $App-header-bgColor;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
