@@ -2,4 +2,27 @@ $color-1: lightblue;
 
 .container {
 	background-color: $color-1;
+	height: 100%;
+	display: grid;
+	grid-template-areas: 
+		"header"
+		"topContent"
+		"bottomContent";
+	grid-template-rows: 50px 1fr 2fr;
+
+	.container__header {
+		grid-area: header;
+	}
+
+	.container__topContent {
+		grid-area: topContent;
+	}
+
+	.container__bottomContainer {
+		grid-area: bottomContent;
+	}
+
+	> * {
+		border: 1px black solid;
+	}
 } 
