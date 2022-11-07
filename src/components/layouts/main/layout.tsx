@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 
+
 type ReactElementOrNull = ReactElement | null;
 
 type LayoutProps = {
