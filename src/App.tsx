@@ -4,7 +4,7 @@ import {layout as Layout} from './components/layouts/main/layout';
 import {header as Header} from "./components/header/header";
 import {bottomTable as BottomTable} from "./components/bottomTable/bottomTable";
 import {topTable as TopTable} from "./components/topTable/topTable";
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
