@@ -8,5 +8,5 @@ export const header = () => {
 			<button>Button-2</button>
 			<button>Button-3</button>
 		</div>
-	)
-}
+	);
+};

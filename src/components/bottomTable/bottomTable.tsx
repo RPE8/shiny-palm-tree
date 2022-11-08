@@ -4,5 +4,5 @@ export const bottomTable = () => {
 			<h1>Hello, Bottom Table</h1>
 			<button>Button</button>
 		</div>
-	)
-}
+	);
+};

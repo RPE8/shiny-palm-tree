@@ -4,7 +4,7 @@ $color-1: lightblue;
 	background-color: $color-1;
 	height: 100%;
 	display: grid;
-	grid-template-areas: 
+	grid-template-areas:
 		"header"
 		"topContent"
 		"bottomContent";
@@ -25,4 +25,4 @@ $color-1: lightblue;
 	> * {
 		border: 1px black solid;
 	}
-} 
+}
