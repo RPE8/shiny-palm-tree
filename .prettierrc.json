@@ -1,6 +1,9 @@
 {
 	"htmlWhitespaceSensitivity": "ignore",
-	"lf": "crlf",
+	"endOfLine": "crlf",
 	"useTabs": true,
-	"bracketSameLine": true
+	"printWidth": 80,
+	"tabWidth": 2,
+	"trailingComma": "es5",
+	"singleQuote": false
 }
