@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from "react";
+import { ReactElement } from "react";
 import "./layout.scss";
 
 type ReactElementOrNull = ReactElement | null;
