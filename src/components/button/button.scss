@@ -12,11 +12,7 @@
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
 	cursor: pointer;
-
-	&-text:hover:not(&--disabled) {
-		background-color: rgba(25, 118, 210, 0.04);
-	}
-
+	
 	&-text {
 		color: rgb(25, 118, 210);
 		background-color: transparent;
@@ -27,4 +23,11 @@
 			background-color: rgba(0, 0, 0, 0.12);
 		}
 	}
+	
+	&-text:hover:not(&--disabled) {
+		background-color: rgba(25, 118, 210, 0.04);
+	}
+
+
+
 }
