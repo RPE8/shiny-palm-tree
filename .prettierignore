@@ -1,0 +1,7 @@
+build
+coverage
+.github
+README.md
+README.old.md
+package.json
+package-lock.json
