@@ -1,0 +1,36 @@
+.closeButton {
+	top: 0;
+	float: right;
+}
+.listDialog li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	text-decoration: none;
+	width: 100%;
+	text-align: left;
+	padding: 8px 16px 8px 16px;
+}
+.footerDialog {
+	// float: bottom;
+	bottom: 0;
+	right: 0;
+	// display: flex;
+	position: absolute;
+}
+.footerDialog button {
+	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	min-width: 64px;
+	padding: 6px 8px;
+	cursor: pointer;
+	border: 0;
+	justify-content: center;
+	position: relative;
+	color: #1976d2;
+	background-color: transparent;
+}
+.footerDialog button:hover {
+	text-decoration: none;
+	background-color: rgba(25, 118, 210, 0.04);
+}

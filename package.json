@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
     "sass": "^1.55.0",
     "typescript": "^4.8.4",
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.13.1",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "2.7.1"
   }
