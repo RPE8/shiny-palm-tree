@@ -1,6 +1,6 @@
 import "./header.scss";
+import { Button } from "../button/button";
 import * as React from 'react';
-
 import InitDialog  from  "../initialDialog/dialog";
 
 export const Header = () => {
@@ -12,9 +12,11 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>Shiny Palm Tree</h1>
-			<button onClick={() => setIsOpen(true)}>Button-1</button>
-			<button>Button-2</button>
-			<button>Button-3</button>
+			<Button variant="text" onClick={() => setIsOpen(true)}>Button-1</Button>
+			<Button variant="text" disabled>
+				Button-2
+			</Button>
+			<Button variant="text">Button-3</Button>
 			<InitDialog isOpen={isOpen} handleCloseDialog={handleCloseDialog}></InitDialog>
 		</div>
 	);
