@@ -24,12 +24,27 @@
 		border: 0px;
 		padding: 6px 8px;
 
-		&.button--disabled {
-			color: rgba(0, 0, 0, 0.26);
+		&:hover {
+			background-color: rgba(25, 118, 210, 0.04);
 		}
 
-		&:hover:not(.button--disabled) {
-			background-color: rgba(25, 118, 210, 0.04);
+		&.button-success {
+			color: rgb(46, 125, 50);
+		}
+
+		&.button-error {
+			color: rgb(211, 47, 47);
+		}
+
+		&:hover {
+			background-color: rgba(46, 125, 50, 0.04);
+		}
+
+		&.button--disabled {
+			color: rgba(0, 0, 0, 0.26);
+			&:hover {
+				background-color: inherit;
+			}
 		}
 	}
 
