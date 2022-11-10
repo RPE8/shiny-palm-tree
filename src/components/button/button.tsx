@@ -1,7 +1,7 @@
 import "./button.scss";
 type props = {
 	children: string;
-	variant: "text" | "outlined" | "contained";
+	variant: "text" | "outlined" | "contained" | "close";
 	disabled?: boolean;
 	onClick?: Function;
 };

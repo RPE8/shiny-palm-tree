@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+
 	font-weight: bold;
     font-size: 0.875rem;
 	letter-spacing: 0.03em;
@@ -11,7 +11,7 @@
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
 	cursor: pointer;
-	
+
 	&-text {
 		color: rgb(25, 118, 210);
 		background-color: transparent;
@@ -27,8 +27,23 @@
 			background-color: rgba(25, 118, 210, 0.04);
 		}
 	}
+	&-close {
+		top: 0;
+		float: right;
+		background-color: transparent;
+		border: 0px;
+		padding: 6px 16px;
+		&.button--disabled {
+			color: rgba(0, 0, 0, 0.26);
+			background-color: rgba(0, 0, 0, 0.12);
+		}
 
-	
+		&:hover:not(.button--disabled) {
+			background-color: rgba(25, 118, 210, 0.04);
+		}
+	}
+
+
 
 	&-contained {
 		color: rgb(225, 255, 255);

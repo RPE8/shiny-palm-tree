@@ -1,5 +1,8 @@
 import Modal from "react-modal";
 import "./dialog.scss";
+import HeaderDialog from "./header/header";
+import ContentDialog from "./content/content";
+import FooterDialog from "./footer/footer";
 
 interface InitDialogType {
 	isOpen: boolean;
@@ -20,22 +23,9 @@ export default function InitDialog(props: InitDialogType) {
 							}
 						}}
 						isOpen={props.isOpen}>
-					<div className="headerDialog">
-						<p>Initial settings dialog<button className="closeButton fa fa-close" onClick={props.handleCloseDialog}></button></p>
-					</div>
-					<div className="contentDialog">
-					{/* <i class="fa-light fa-house-blank"></i> */}
-						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
-						<ul className="listDialog">
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-						</ul>
-					</div>
-					<div className="footerDialog">
-						<button onClick={props.handleCloseDialog}>NEXT</button>
-						<button onClick={props.handleCloseDialog}>OK</button>
-					</div>
+					<HeaderDialog handleCloseDialog={props.handleCloseDialog}></HeaderDialog>
+					<ContentDialog></ContentDialog>
+					<FooterDialog handleCloseDialog={props.handleCloseDialog}></FooterDialog>
 				</Modal>
 			)}
 		</div>
