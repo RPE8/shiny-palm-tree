@@ -1,22 +1,26 @@
 import "./header.scss";
+import { useTranslation } from "react-i18next";
 
-function ChangeLang(lang: string) {
-	alert(`Вы выбрали '${lang}' язык`);
-}
+export const Header = () => {
+	const { t, i18n } = useTranslation();
 
-export const header = () => {
+	function ChangeLang(lang: string) {
+		console.log(`Вы выбрали '${lang}' язык`);
+		i18n.changeLanguage(lang);
+	}
+
 	return (
 		<div className="header">
-			<h1>Shiny Palm Tree</h1>
-			<button>Button-1</button>
-			<button>Button-2</button>
-			<button>Button-3</button>
+			<h1>{t("appHeader")}</h1>
+			<button>{t("buttonPattern", {number: 1})}</button>
+			<button>{t("buttonPattern", {number: 2})}</button>
+			<button>{t("buttonPattern", {number: 3})}</button>
 			<button onClick = {
-				() => ChangeLang("EN")
-			}>Английский язык</button>
+				() => ChangeLang("en")
+			}>{t("lang.en")}</button>
 			<button onClick = {
-				() => ChangeLang("RU")
-			}>Русский язык</button>
+				() => ChangeLang("ru")
+			}>{t("lang.ru")}</button>
 		</div>
 	);
 };
