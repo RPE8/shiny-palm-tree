@@ -1,8 +1,13 @@
+import { Button } from "../button/button";
+
 export const bottomTable = () => {
 	return (
 		<div className="bottomTable">
-			<h1>Hello, Bottom Table</h1>
-			<button>Button</button>
+			<Button variant="outlined">Button-1</Button>
+			<Button variant="outlined" disabled>
+				Button-2
+			</Button>
+			<Button variant="outlined">Button-3</Button>
 		</div>
 	);
 };
