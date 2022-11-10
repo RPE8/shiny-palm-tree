@@ -87,14 +87,34 @@
 		background-color: rgba(0,0,0,0);
 		color: rgb(25, 118, 210);
 		
+		&:hover {
+			background-color: rgba(25, 118, 210, 0.04);
+		}
+
+		&.button-success {
+			color: rgb(46, 125, 50);
+			border: 1px solid rgba(46, 125, 50, 0.5);
+			&:hover {
+				background-color: rgba(46, 125, 50, 0.04);
+				border: 1px solid rgb(46, 125, 50);
+			}
+		}
+
+		&.button-error {
+			color: rgb(211, 47, 47);
+			border: 1px solid rgba(211, 47, 47, 0.5);
+			&:hover {
+				background-color: rgba(211, 47, 47, 0.04);
+				border: 1px solid rgb(211, 47, 47);
+			}
+		}
+
 		&.button--disabled {
 			color: rgba(0, 0, 0, 0.26);
 			border: 1px solid rgba(0, 0, 0, 0.12);
 		}
 
-		&:hover:not(.button--disabled) {
-			background-color: rgba(25, 118, 210, 0.04);
-		}
+		
 	}
 
 }
