@@ -4,9 +4,9 @@ interface ContentDialogType {
 
 export const ContentDialog = (props: ContentDialogType) => {
 	const listItems = [
-		{ "key": 0, "value": "First" },
+		{ "key": "0", "value": "First" },
 		{ "key": 1, "value": "Second" },
-		{ "key": 2, "value": "Third" }
+		{ "key": "2", "value": "Third" }
 	];
 	return (
 		<div>
