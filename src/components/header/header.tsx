@@ -19,7 +19,7 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text" onClick={() => setIsOpen(true)} size="small">{t("size.small")}</Button>
+			<Button variant="text" size="small" onClick={() => setIsOpen(true)}>{t("size.small")}</Button>
 			<Button variant="text" disabled>
 				{t("size.medium")}
 			</Button>
