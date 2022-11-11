@@ -1,4 +1,5 @@
 import { List } from "../../list/list";
+import { Breadcrumbs } from "../../breadcrumbs/breadcrumbs";
 interface ContentDialogType {
 }
 
@@ -8,9 +9,14 @@ export const ContentDialog = (props: ContentDialogType) => {
 		{ "key": 1, "value": "Second" },
 		{ "key": "2", "value": "Third" }
 	];
+	const breadcrumbsItems = [
+		{ "key": "0", "value": "MUI" },
+		{ "key": 1, "value": "Core" },
+		{ "key": "2", "value": "Breadcrumb" }
+	];
 	return (
 		<div>
-			<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
+			<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
 			<List items={listItems}></List>
 		</div>
 	);
