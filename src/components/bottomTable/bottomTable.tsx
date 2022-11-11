@@ -7,7 +7,12 @@ export const bottomTable = () => {
 			<Button variant="outlined" disabled>
 				Button-2
 			</Button>
-			<Button variant="outlined">Button-3</Button>
+			<Button variant="outlined" color="success">
+				Button-3
+			</Button>
+			<Button variant="outlined" color="error">
+				Button-4
+			</Button>
 		</div>
 	);
 };
