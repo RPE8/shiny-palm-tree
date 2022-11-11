@@ -1,5 +1,4 @@
 import Modal from "react-modal";
-import "./dialog.scss";
 import { HeaderDialog as Header } from "./header/header";
 import { ContentDialog as Content } from "./content/content";
 import { FooterDialog as Footer } from "./footer/footer";
