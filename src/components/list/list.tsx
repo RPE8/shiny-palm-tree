@@ -1,13 +1,18 @@
+import "./list.scss";
+
 interface ListType {
-	children?: []
+	items: Array<{
+		key: number,
+		value: string
+	}>
 }
 
 export const List = (props: ListType) => {
 	return (
-		<div className="listDialog">
-			<p>Single-line item</p>
-			<p>Single-line item</p>
-			<p>Single-line item</p>
-		</div>
+		<ul className="list">
+			{props.items.map(item => {
+				return <li key={item.key}>{item.value}</li>;
+			})}
+		</ul>
 	);
 }
