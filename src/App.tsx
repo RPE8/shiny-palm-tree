@@ -11,7 +11,7 @@ function App() {
 		.then((res) => res.json())
 		// Update the state with the received response
 		.then(console.log);
-    
+
 	return (
 		<div className="App">
 			<Layout
