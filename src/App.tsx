@@ -5,6 +5,13 @@ import { TopTable as TopTable } from "./components/topTable/topTable";
 import "./App.scss";
 
 function App() {
+	fetch("/data", {
+		method: "GET",
+	})
+		.then((res) => res.json())
+		// Update the state with the received response
+		.then(console.log);
+
 	return (
 		<div className="App">
 			<Layout

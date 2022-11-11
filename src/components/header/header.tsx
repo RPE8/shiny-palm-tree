@@ -12,15 +12,15 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text">{t("buttonPattern", {number: 1})}</Button>
+			<Button variant="text" size="small">{t("size.small")}</Button>
 			<Button variant="text" disabled>
-			{t("buttonPattern", {number: 2})}
+				{t("size.medium")}
 			</Button>
-			<Button variant="text" color="success">
-				{t("buttonPattern", {number: 3})}
+			<Button variant="text" color="success" size="large">
+				{t("size.large")}
 			</Button>
 			<Button variant="text" color="error">
-				{t("buttonPattern", {number: 4})}
+				{t("size.medium")}
 			</Button>
 			<Button variant="text" onClick = {
 				() => ChangeLang("en")

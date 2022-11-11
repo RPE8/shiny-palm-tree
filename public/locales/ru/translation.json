@@ -9,5 +9,10 @@
 		"en": "Английский язык"
 	},
 	"appHeader": "Блестящая пальма",
-	"buttonPattern": "Кнопка {{number}}"
+	"buttonPattern": "Кнопка {{number}}",
+	"size": {
+		"small": "маленький",
+		"medium": "средний",
+		"large": "большой"
+	}
 }

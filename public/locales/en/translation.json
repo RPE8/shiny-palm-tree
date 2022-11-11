@@ -9,5 +9,10 @@
 		"en": "English language"
 	},
 	"appHeader": "Shiny Palm Tree",
-	"buttonPattern": "Button {{number}}"
+	"buttonPattern": "Button {{number}}",
+	"size": {
+		"small": "small",
+		"medium": "medium",
+		"large": "large"
+	}
 }
