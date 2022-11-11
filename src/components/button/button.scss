@@ -2,11 +2,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+	gap: 1rem;
 	text-transform: uppercase;
-
+	width: auto;
 	font-weight: bold;
-    font-size: 0.875rem;
 	letter-spacing: 0.03em;
     min-width: 64px;
 	border-radius: 4px;
@@ -22,7 +21,6 @@
 		color: rgb(25, 118, 210);
 		background-color: transparent;
 		border: 0px;
-		padding: 6px 8px;
 
 		&:hover {
 			background-color: rgba(25, 118, 210, 0.04);
@@ -52,7 +50,6 @@
 		color: rgb(225, 255, 255);
 		background-color: rgb(25, 118, 210);
 		border: 0px;
-		padding: 6px 16px;
 		box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 
 		&:hover{
@@ -83,7 +80,6 @@
 
 	&-outlined {
 		border: 1px solid rgba(25, 118, 210, 0.5);
-		padding: 5px 15px;
 		background-color: rgba(0,0,0,0);
 		color: rgb(25, 118, 210);
 		
@@ -116,6 +112,42 @@
 		}
 
 		
+	}
+
+	&.buttonSize-small {
+		font-size: 0.6rem;
+		padding: 2px 6px;
+		min-width: 5rem;
+		min-height: 2rem;
+
+		&>.buttonIcon {
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+
+	&.buttonSize-medium {
+		font-size: 0.8rem;
+		padding: 4px 12px;
+		min-width: 6.5rem;
+		min-height: 2.563rem;
+
+		&>.buttonIcon {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+	}
+
+	&.buttonSize-large {
+		font-size: 1rem;
+		padding: 6px 18px;
+		min-width: 8rem;
+		min-height: 3.125rem;
+
+		&>.buttonIcon {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
 	}
 
 }

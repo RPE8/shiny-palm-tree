@@ -3,8 +3,10 @@ import Icon from "../button/icon";
 
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
+type ValidSizes = "small" | "medium" | "large";
 type Props = {
 	children: string;
+	size?: ValidSizes;
 	variant: ValidVariants;
 	color?: ValidColors;
 	disabled?: boolean;
@@ -15,6 +17,7 @@ type Props = {
 
 export const Button = ({
 	variant,
+	size = "medium",
 	onClick,
 	children,
 	color,
@@ -22,7 +25,7 @@ export const Button = ({
 	endIcon,
 	disabled = false,
 }: Props) => {
-	let classes = `button button-${variant}`;
+	let classes = `button button-${variant} buttonSize-${size}`;
 	if (color) {
 		classes += ` button-${color}`;
 	}
