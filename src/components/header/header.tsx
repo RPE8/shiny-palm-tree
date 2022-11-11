@@ -5,11 +5,11 @@ export const header = () => {
 	return (
 		<div className="header">
 			<h1>Shiny Palm Tree</h1>
-			<Button variant="text">Button-1</Button>
+			<Button variant="text" size="small">Small</Button>
 			<Button variant="text" disabled>
-				Button-2
+				Medium
 			</Button>
-			<Button variant="text">Button-3</Button>
+			<Button variant="text" size="large">Large</Button>
 		</div>
 	);
 };
