@@ -12,15 +12,16 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>Shiny Palm Tree</h1>
-			<Button variant="text" onClick={() => setIsOpen(true)}>Button-1</Button>
+			<Button variant="text" >Small</Button>
+			<Button variant="text" onClick={() => setIsOpen(true)} size="small">Button-1</Button>
 			<Button variant="text" disabled>
-				Button-2
+				Medium
 			</Button>
-			<Button variant="text" color="success">
-				Button-3
+			<Button variant="text" color="success" size="large">
+				Large
 			</Button>
 			<Button variant="text" color="error">
-				Button-4
+				Medium
 			</Button>
 			<InitDialog isOpen={isOpen} handleCloseDialog={handleCloseDialog}></InitDialog>
 		</div>
