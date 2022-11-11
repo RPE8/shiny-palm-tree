@@ -8,8 +8,8 @@ interface FooterDialogType {
 export const FooterDialog = (props: FooterDialogType) => {
 	return (
 		<div className="footerDialog">
-			<Button variant="text" onClick={props.handleCloseDialog}>NEXT</Button>
-			<Button variant="text" onClick={props.handleCloseDialog}>OK</Button>
+			<Button variant="text" onClick={props.handleCloseDialog} size="medium">NEXT</Button>
+			<Button variant="text" onClick={props.handleCloseDialog} size="medium">OK</Button>
 		</div>
 	);
 }

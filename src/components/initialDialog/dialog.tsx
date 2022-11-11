@@ -13,15 +13,16 @@ export default function InitDialog(props: InitDialogType) {
 		<div>
 			{props.isOpen && (
 				<Modal
-						style={{
-							content: {
-								width: "40%",
-								height: "40%",
-								top: "30%",
-								left: "30%"
-							}
-						}}
-						isOpen={props.isOpen}>
+					style={{
+						content: {
+							width: "40%",
+							height: "40%",
+							top: "30%",
+							left: "30%"
+						}
+					}}
+					isOpen={props.isOpen}
+				>
 					<Header handleCloseDialog={props.handleCloseDialog}></Header>
 					<Content></Content>
 					<Footer handleCloseDialog={props.handleCloseDialog}></Footer>
