@@ -22,16 +22,29 @@
 		background-color: transparent;
 		border: 0px;
 
-		&.button--disabled {
-			color: rgba(0, 0, 0, 0.26);
-		}
-
-		&:hover:not(.button--disabled) {
+		&:hover {
 			background-color: rgba(25, 118, 210, 0.04);
 		}
-	}
 
-	
+		&.button-success {
+			color: rgb(46, 125, 50);
+		}
+
+		&.button-error {
+			color: rgb(211, 47, 47);
+		}
+
+		&:hover {
+			background-color: rgba(46, 125, 50, 0.04);
+		}
+
+		&.button--disabled {
+			color: rgba(0, 0, 0, 0.26);
+			&:hover {
+				background-color: inherit;
+			}
+		}
+	}
 
 	&-contained {
 		color: rgb(225, 255, 255);
@@ -39,15 +52,29 @@
 		border: 0px;
 		box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 
+		&:hover{
+			background-color: rgb(21, 101, 192);
+			box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+		}
+
+		&.button-success {
+			background-color: rgb(46, 125, 50);
+			&:hover {
+				background-color: rgb(27, 94, 32);
+			}
+		}
+
+		&.button-error {
+			background-color: rgb(211, 47, 47);
+			&:hover {
+				background-color: rgb(198, 40, 40);
+			}
+		}
+
 		&.button--disabled {
 			color: rgba(0, 0, 0, 0.26);
 			box-shadow: none;
 			background-color: rgba(0, 0, 0, 0.12);
-		}
-
-		&:hover:not(.button--disabled) {
-			background-color: rgb(21, 101, 192);
-			box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 		}
 	}
 
@@ -56,14 +83,35 @@
 		background-color: rgba(0,0,0,0);
 		color: rgb(25, 118, 210);
 		
+		&:hover {
+			background-color: rgba(25, 118, 210, 0.04);
+		}
+
+		&.button-success {
+			color: rgb(46, 125, 50);
+			border: 1px solid rgba(46, 125, 50, 0.5);
+			&:hover {
+				background-color: rgba(46, 125, 50, 0.04);
+				border: 1px solid rgb(46, 125, 50);
+			}
+		}
+
+		&.button-error {
+			color: rgb(211, 47, 47);
+			border: 1px solid rgba(211, 47, 47, 0.5);
+			&:hover {
+				background-color: rgba(211, 47, 47, 0.04);
+				border: 1px solid rgb(211, 47, 47);
+			}
+		}
+
 		&.button--disabled {
 			color: rgba(0, 0, 0, 0.26);
 			border: 1px solid rgba(0, 0, 0, 0.12);
+			background-color: transparent;
 		}
 
-		&:hover:not(.button--disabled) {
-			background-color: rgba(25, 118, 210, 0.04);
-		}
+		
 	}
 	
 	&.buttonSize-small {

@@ -9,7 +9,12 @@ export const header = () => {
 			<Button variant="text" disabled>
 				Medium
 			</Button>
-			<Button variant="text" size="large">Large</Button>
+			<Button variant="text" color="success" size="large">
+				Large
+			</Button>
+			<Button variant="text" color="error">
+				Medium
+			</Button>
 		</div>
 	);
 };

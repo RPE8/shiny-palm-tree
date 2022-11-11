@@ -8,7 +8,12 @@ export const topTable = () => {
 			<Button variant="contained" disabled>
 				Button-2
 			</Button>
-			<Button variant="contained" size="large">Button-3</Button>
+			<Button variant="contained" color="success" size="large">
+				Button-3
+			</Button>
+			<Button variant="contained" color="error">
+				Button-4
+			</Button>
 		</div>
 	);
 };
