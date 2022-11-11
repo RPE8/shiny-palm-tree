@@ -1,4 +1,5 @@
 import "./button.scss";
+import Icon from "../button/icon";
 
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
@@ -7,6 +8,8 @@ type Props = {
 	variant: ValidVariants;
 	color?: ValidColors;
 	disabled?: boolean;
+	startIcon?: string;
+	endIcon?: string;
 	onClick?: Function;
 };
 
@@ -15,6 +18,8 @@ export const Button = ({
 	onClick,
 	children,
 	color,
+	startIcon,
+	endIcon,
 	disabled = false,
 }: Props) => {
 	let classes = `button button-${variant}`;
@@ -38,7 +43,9 @@ export const Button = ({
 				onClick?.();
 			}}
 		>
+			{startIcon && <Icon src={startIcon} />}
 			{children}
+			{endIcon && <Icon src={endIcon} />}
 		</button>
 	);
 };
