@@ -1,10 +1,10 @@
 import "./header.scss";
 import { Button } from "../button/button";
-import * as React from 'react';
+import {useState} from 'react';
 import InitDialog  from  "../initialDialog/dialog";
 
 export const Header = () => {
-	const [isOpen, setIsOpen] = React.useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 	const handleCloseDialog = () => {
 		setIsOpen(false);
 	};
