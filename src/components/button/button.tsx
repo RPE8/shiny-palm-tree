@@ -1,19 +1,33 @@
 import "./button.scss";
-type props = {
+
+type ValidVariants = "text" | "outlined" | "contained";
+type ValidColors = "success" | "error";
+type Props = {
 	children: string;
-	variant: "text" | "outlined" | "contained";
+	variant: ValidVariants;
+	color?: ValidColors;
 	disabled?: boolean;
 	onClick?: Function;
 };
+
 export const Button = ({
 	variant,
 	onClick,
 	children,
+	color,
 	disabled = false,
-}: props) => {
-	const classes = `button button-${variant}${
-		disabled ? " button--disabled" : ""
-	}`;
+}: Props) => {
+	let classes = `button button-${variant}`;
+	if (color) {
+		classes += ` button-${color}`;
+	}
+	if (disabled) {
+		classes += ` button--disabled`;
+	}
+	console.log(classes);
+	// const classes = `button ${disabled ? " button--disabled" : ""}${
+	// 	color ? " button--" + color : ""
+	// }`;
 	return (
 		<button
 			className={classes}
