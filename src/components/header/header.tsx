@@ -1,4 +1,5 @@
 import "./header.scss";
+import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import {useState} from 'react';
 import InitDialog  from  "../initialDialog/dialog";
@@ -9,19 +10,31 @@ export const Header = () => {
 		setIsOpen(false);
 	};
 
+	const { t, i18n } = useTranslation();
+
+	function ChangeLang(lang: string) {
+		i18n.changeLanguage(lang);
+	}
+
 	return (
 		<div className="header">
-			<h1>Shiny Palm Tree</h1>
-			<Button variant="text" onClick={() => setIsOpen(true)}>Button-1</Button>
+			<h1>{t("appHeader")}</h1>
+			<Button variant="text" size="small" onClick={() => setIsOpen(true)}>{t("size.small")}</Button>
 			<Button variant="text" disabled>
-				Button-2
+				{t("size.medium")}
 			</Button>
-			<Button variant="text" color="success">
-				Button-3
+			<Button variant="text" color="success" size="large">
+				{t("size.large")}
 			</Button>
 			<Button variant="text" color="error">
-				Button-4
+				{t("size.medium")}
 			</Button>
+			<Button variant="text" onClick = {
+				() => ChangeLang("en")
+			}>{t("lang.en")}</Button>
+			<Button variant="text" onClick = {
+				() => ChangeLang("ru")
+			}>{t("lang.ru")}</Button>
 			<InitDialog isOpen={isOpen} handleCloseDialog={handleCloseDialog}></InitDialog>
 		</div>
 	);
