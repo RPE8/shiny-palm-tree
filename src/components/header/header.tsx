@@ -22,12 +22,12 @@ export const Header = () => {
 			<Button variant="text" color="error">
 				{t("buttonPattern", {number: 4})}
 			</Button>
-			<button onClick = {
+			<Button variant="text" onClick = {
 				() => ChangeLang("en")
-			}>{t("lang.en")}</button>
-			<button onClick = {
+			}>{t("lang.en")}</Button>
+			<Button variant="text" onClick = {
 				() => ChangeLang("ru")
-			}>{t("lang.ru")}</button>
+			}>{t("lang.ru")}</Button>
 		</div>
 	);
 };
