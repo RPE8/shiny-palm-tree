@@ -1,19 +1,34 @@
 import "./header.scss";
+import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 
-export const header = () => {
+export const Header = () => {
+	const { t, i18n } = useTranslation();
+
+	function ChangeLang(lang: string) {
+		i18n.changeLanguage(lang);
+	}
+
 	return (
 		<div className="header">
-			<h1>Shiny Palm Tree</h1>
-			<Button variant="text" size="small">Small</Button>
+			<h1>{t("appHeader")}</h1>
+			<Button variant="text" size="small">
+				{t("size.small")}
+			</Button>
 			<Button variant="text" disabled>
-				Medium
+				{t("size.medium")}
 			</Button>
 			<Button variant="text" color="success" size="large">
-				Large
+				{t("size.large")}
 			</Button>
 			<Button variant="text" color="error">
-				Medium
+				{t("size.medium")}
+			</Button>
+			<Button variant="text" onClick={() => ChangeLang("en")}>
+				{t("lang.en")}
+			</Button>
+			<Button variant="text" onClick={() => ChangeLang("ru")}>
+				{t("lang.ru")}
 			</Button>
 		</div>
 	);

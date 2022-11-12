@@ -1,11 +1,7 @@
 type Props = {
-    src: string;
-}
+	src: string;
+};
 
-export default function Icon ({
-    src,
-}: Props) {
-    return (
-        <img src={src} alt={src} className="buttonIcon" />
-    )
+export default function Icon({ src }: Props) {
+	return <img src={src} alt={src} className="buttonIcon" />;
 }
