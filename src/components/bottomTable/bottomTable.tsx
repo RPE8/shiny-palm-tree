@@ -27,12 +27,7 @@ export const BottomTable = () => {
 					number: 4,
 				})}
 			</Button>
-			<Button
-				variant="outlined"
-				color="success"
-				size="large"
-				startIcon="icons/check.svg"
-			>
+			<Button variant="outlined" color="success" size="large" startIcon="icons/check.svg">
 				{t("buttonPattern", {
 					number: 5,
 				})}
