@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export interface ThemeContextInterface {
+export interface ThemeInterface {
 	name: string;
 	color: {
 		primary: string;
@@ -10,6 +10,11 @@ export interface ThemeContextInterface {
 		primaryColor: string;
 		secondaryColor: string;
 	}
+}
+
+export interface ThemeContextInterface {
+	theme: ThemeInterface,
+	setTheme: Function;
 }
 
 const ThemeContext = createContext<ThemeContextInterface | null>(null);
