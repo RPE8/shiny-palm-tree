@@ -2,11 +2,11 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import {useState} from 'react';
-import InitDialog  from  "../initialDialog/dialog";
+import Dialog from "../initialDialog/dialog";
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const handleCloseDialog = () => {
+	const onCloseDialog = () => {
 		setIsOpen(false);
 	};
 
@@ -35,7 +35,7 @@ export const Header = () => {
 			<Button variant="text" onClick = {
 				() => ChangeLang("ru")
 			}>{t("lang.ru")}</Button>
-			<InitDialog isOpen={isOpen} handleCloseDialog={handleCloseDialog}></InitDialog>
+			<Dialog isOpen={isOpen} onCloseDialog={onCloseDialog}></Dialog>
 		</div>
 	);
 };
