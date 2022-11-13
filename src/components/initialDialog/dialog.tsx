@@ -1,5 +1,4 @@
 import Modal from "react-modal";
-import "./dialog.scss";
 import { Button } from "../button/button";
 import { List } from "../list/list";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
