@@ -28,15 +28,16 @@ export const Button = ({
 	// const classes = `button ${disabled ? " button--disabled" : ""}${
 	// 	color ? " button--" + color : ""
 	// }`;
+
+	function handleClick() {
+		console.log("button is active");
+		onClick?.();
+	}
+
 	return (
 		<button
 			className={classes}
-			onClick={() => {
-				console.log("button clicked");
-				if (disabled) return;
-				console.log("button is active");
-				onClick?.();
-			}}
+			onClick={disabled === false ? handleClick : undefined}
 		>
 			{children}
 		</button>
