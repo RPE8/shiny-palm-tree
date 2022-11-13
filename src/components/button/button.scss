@@ -1,18 +1,44 @@
+$iconSmallWidth: 1.125rem;
+$iconSmallHeight: 1.125rem;
+$iconMediumWidth: 1.25rem;
+$iconMediumHeight: 1.25rem;
+$iconLargeWidth: 1.375rem;
+$iconLargeHeight: 1.375rem;
+
+$buttonSmallFontSize: 0.8rem;
+$buttonMediumFontSize: 0.9rem;
+$buttonLargeFontSize: 1rem;
+
+
+
+@mixin buttonSize($fontSize, $padding, $iconHeight, $iconWidth) {
+	font-size: $fontSize;
+	padding: $padding;
+
+	& > .buttonIcon {
+		height: $iconHeight;
+		width: $iconWidth
+	}
+}
+
 .button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	
+	gap: 1rem;
 	text-transform: uppercase;
-
+	min-width: 4rem;
 	font-weight: bold;
 	letter-spacing: 0.03em;
-    min-width: 64px;
+	line-height: 1.75;
+	min-width: 64px;
 	border-radius: 4px;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+		border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
 	cursor: pointer;
-	
+
 	&--disabled {
 		cursor: default;
 	}
@@ -44,6 +70,18 @@
 				background-color: inherit;
 			}
 		}
+
+		&.buttonSize-small {
+			@include buttonSize($buttonSmallFontSize, 0.25rem 0.313rem, $iconSmallHeight, $iconSmallWidth);
+		}
+
+		&.buttonSize-medium {
+			@include buttonSize($buttonMediumFontSize, 0.375rem 0.5rem, $iconMediumHeight, $iconMediumWidth);
+		}
+
+		&.buttonSize-large {
+			@include buttonSize($buttonLargeFontSize, 0.5rem 0.688rem, $iconLargeHeight, $iconLargeWidth);
+		}
 	}
 
 	&-contained {
@@ -52,7 +90,7 @@
 		border: 0px;
 		box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 
-		&:hover{
+		&:hover {
 			background-color: rgb(21, 101, 192);
 			box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 		}
@@ -76,13 +114,25 @@
 			box-shadow: none;
 			background-color: rgba(0, 0, 0, 0.12);
 		}
+
+		&.buttonSize-small {
+			@include buttonSize($buttonSmallFontSize, 0.25rem 0.625rem, $iconSmallHeight, $iconSmallWidth);
+		}
+
+		&.buttonSize-medium {
+			@include buttonSize($buttonMediumFontSize, 0.375rem 1rem, $iconMediumHeight, $iconMediumWidth);
+		}
+
+		&.buttonSize-large {
+			@include buttonSize($buttonLargeFontSize, 0.5rem 1.375rem, $iconLargeHeight, $iconLargeWidth);
+		}
 	}
 
 	&-outlined {
 		border: 1px solid rgba(25, 118, 210, 0.5);
-		background-color: rgba(0,0,0,0);
+		background-color: rgba(0, 0, 0, 0);
 		color: rgb(25, 118, 210);
-		
+
 		&:hover {
 			background-color: rgba(25, 118, 210, 0.04);
 		}
@@ -111,27 +161,16 @@
 			background-color: transparent;
 		}
 
-		
-	}
-	
-	&.buttonSize-small {
-		font-size: 0.6rem;
-		padding: 2px 6px;
-		width: 5rem;
-		height: 2rem;
-	}
+		&.buttonSize-small {
+			@include buttonSize($buttonSmallFontSize, 0.188rem 0.563rem, $iconSmallHeight, $iconSmallWidth);
+		}
 
-	&.buttonSize-medium {
-		font-size: 0.8rem;
-		padding: 4px 12px;
-		width: 6.5rem;
-		height: 2.563rem;
-	}
+		&.buttonSize-medium {
+			@include buttonSize($buttonMediumFontSize, 0.313rem 0.938rem, $iconMediumHeight, $iconMediumWidth);
+		}
 
-	&.buttonSize-large {
-		font-size: 1rem;
-		padding: 6px 18px;
-		width: 8rem;
-		height: 3.125rem;
+		&.buttonSize-large {
+			@include buttonSize($buttonLargeFontSize, 0.438rem 1.313rem, $iconLargeHeight, $iconLargeWidth);
+		}
 	}
 }
