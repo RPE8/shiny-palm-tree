@@ -1,6 +1,7 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
+import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
 	const { t, i18n } = useTranslation();
@@ -28,6 +29,9 @@ export const Header = () => {
 			<Button variant="text" onClick = {
 				() => ChangeLang("ru")
 			}>{t("lang.ru")}</Button>
+			<IconButton variant="text"></IconButton>
+			<IconButton variant="contained"></IconButton>
+			<IconButton variant="outlined"></IconButton>
 		</div>
 	);
 };
