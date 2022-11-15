@@ -23,7 +23,7 @@ export const IconButton = ({
 	color,
 	disabled = false,
 }: Props) => {
-	let classes = `button button-${variant} iconButtonSize-${size}`;
+	let classes = `iconButton button-${variant} iconButtonSize-${size}`;
 	if (color) {
 		classes += ` button-${color}`;
 	}
