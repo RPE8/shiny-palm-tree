@@ -1,6 +1,7 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
+import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
 	const { t, i18n } = useTranslation();
@@ -24,12 +25,33 @@ export const Header = () => {
 			<Button variant="text" color="error">
 				{t("size.medium")}
 			</Button>
+
 			<Button variant="text" onClick={() => ChangeLang("en")}>
 				{t("lang.en")}
 			</Button>
 			<Button variant="text" onClick={() => ChangeLang("ru")}>
 				{t("lang.ru")}
 			</Button>
+
+			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
+			<IconButton variant="contained" icon="FaRegSave" color="success"></IconButton>
+			<IconButton variant="contained" icon="FaRegSave" color="success" size="large"></IconButton>
+
+			<IconButton variant="contained" icon="FaRegTrashAlt" size="small"></IconButton>
+			<IconButton variant="contained" icon="FaRegTrashAlt"></IconButton>
+			<IconButton variant="contained" icon="FaRegTrashAlt" size="large"></IconButton>
+
+			<IconButton variant="outlined" icon="FaFileDownload" size="small"></IconButton>
+			<IconButton variant="outlined" icon="FaFileDownload"></IconButton>
+			<IconButton variant="outlined" icon="FaFileDownload" size="large"></IconButton>
+
+			<IconButton variant="text" icon="FaRegTimesCircle" size="small" color="error"></IconButton>
+			<IconButton variant="text" icon="FaRegTimesCircle" color="error"></IconButton>
+			<IconButton variant="text" icon="FaRegTimesCircle" color="error" size="large"></IconButton>
+
+			<IconButton variant="text" disabled icon="FaRegEnvelope" size="small"></IconButton>
+			<IconButton variant="contained" disabled icon="FaRegEnvelope"></IconButton>
+			<IconButton variant="outlined" disabled icon="FaRegEnvelope" size="large"></IconButton>
 		</div>
 	);
 };
