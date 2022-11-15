@@ -19,7 +19,7 @@ export const Header = () => {
 	];
 
 	const [isOpen, setIsOpen] = useState(false);
-	function onCloseDialog() {
+	const onCloseDialog = () => {
 		setIsOpen(false);
 	};
 
