@@ -1,7 +1,7 @@
 import "./iconButton.scss";
 import * as Icons from "react-icons/fa"
 
-//see icons from https://react-icons.github.io/react-icons/icons?name=fa
+//see icons for 'icon' property from https://react-icons.github.io/react-icons/icons?name=fa
 
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
