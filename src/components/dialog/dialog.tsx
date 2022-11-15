@@ -23,12 +23,8 @@ export default function Dialog(props: DialogType) {
 					}}
 					isOpen={props.isOpen}
 				>
-					<>
-						{props.header}
-					</>
-					<>
-						{props.content}
-					</>
+					{props.header}
+					{props.content}
 					<div className="footerDialog">
 						{props.footer}
 					</div>

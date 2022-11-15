@@ -11,7 +11,7 @@ export const List = (props: ListType) => {
 	return (
 		<div className="list">
 			{props.items.map(item => (
-				<div key={item.key.toString()}><span className="listItem">{item.value}</span></div>
+				<div key={item.key.toString()}><span className="list__item">{item.value}</span></div>
 			))}
 		</div>
 	);
