@@ -2,7 +2,7 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import {useState} from 'react';
-import Dialog from "../initialDialog/dialog";
+import Dialog from "../dialog/dialog";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
@@ -62,15 +62,15 @@ export const Header = () => {
 
 			<Dialog
 				isOpen={isOpen}
-				headerProp={
+				header={
 					<>
 						<span>Initial settings dialog</span>
 						<Button variant="close" onClick={onCloseDialog}>Close</Button>
 					</>
 				}
-				contentProp={
+				content={
 					<>
-						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
+						<p><a href=""> MUI</a> / <a href="">Core</a> / <a href="">Breadcrumb</a></p>
 						<ul className="listDialog">
 							<li>Single-line item</li>
 							<li>Single-line item</li>
@@ -78,7 +78,7 @@ export const Header = () => {
 						</ul>
 					</>
 				}
-				footerProp={
+				footer={
 					<>
 						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
 						<Button variant="text" onClick={onCloseDialog}>OK</Button>
