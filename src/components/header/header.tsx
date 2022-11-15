@@ -2,16 +2,28 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import { List } from "../list/list";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Dialog from "../dialog/dialog";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
-	const listItems = [
-		{ "key": "0", "value": "First" },
-		{ "key": 1, "value": "Second" },
-		{ "key": "2", "value": "Third" }
-	];
+	const [listData, setListData] = useState([]);
+	async function loadListData() {
+		fetch("/listData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(listData => {
+			setListData(listData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadListData();
+	}, []);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const onToggleOpenDialog = (bOpen: boolean) => {
@@ -86,7 +98,7 @@ export const Header = () => {
 				content={
 					<>
 						<p><a href=""> MUI</a> / <a href="">Core</a> / <a href="">Breadcrumb</a></p>
-						<List items={listItems}></List>
+						<List items={listData}></List>
 					</>
 				}
 				footer={
