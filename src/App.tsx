@@ -14,11 +14,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Layout
-				header={<Header />}
-				topContent={<TopTable />}
-				bottomContent={<BottomTable />}
-			></Layout>
+			<Layout header={<Header />} topContent={<TopTable />} bottomContent={<BottomTable />}></Layout>
 		</div>
 	);
 }

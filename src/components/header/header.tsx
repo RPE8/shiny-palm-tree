@@ -13,7 +13,9 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text" size="small">{t("size.small")}</Button>
+			<Button variant="text" size="small">
+				{t("size.small")}
+			</Button>
 			<Button variant="text" disabled>
 				{t("size.medium")}
 			</Button>
@@ -23,12 +25,13 @@ export const Header = () => {
 			<Button variant="text" color="error">
 				{t("size.medium")}
 			</Button>
-			<Button variant="text" onClick = {
-				() => ChangeLang("en")
-			}>{t("lang.en")}</Button>
-			<Button variant="text" onClick = {
-				() => ChangeLang("ru")
-			}>{t("lang.ru")}</Button>
+
+			<Button variant="text" onClick={() => ChangeLang("en")}>
+				{t("lang.en")}
+			</Button>
+			<Button variant="text" onClick={() => ChangeLang("ru")}>
+				{t("lang.ru")}
+			</Button>
 
 			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
 			<IconButton variant="contained" icon="FaRegSave" color="success"></IconButton>
