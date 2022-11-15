@@ -2,13 +2,21 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import {useState} from 'react';
-import Dialog from "../initialDialog/dialog";
+import Dialog from "../dialog/dialog";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
+import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const onCloseDialog = () => {
 		setIsOpen(false);
 	};
+
+	const breadcrumbsItems = [
+		{ "key": "0", "value": "MUI" },
+		{ "key": 1, "value": "Core" },
+		{ "key": "2", "value": "Breadcrumb" }
+	];
 
 	const { t, i18n } = useTranslation();
 
@@ -31,13 +39,59 @@ export const Header = () => {
 			<Button variant="text" color="error">
 				{t("size.medium")}
 			</Button>
+
 			<Button variant="text" onClick={() => ChangeLang("en")}>
 				{t("lang.en")}
 			</Button>
 			<Button variant="text" onClick={() => ChangeLang("ru")}>
 				{t("lang.ru")}
 			</Button>
-			<Dialog isOpen={isOpen} onCloseDialog={onCloseDialog}></Dialog>
+
+			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
+			<IconButton variant="contained" icon="FaRegSave" color="success"></IconButton>
+			<IconButton variant="contained" icon="FaRegSave" color="success" size="large"></IconButton>
+
+			<IconButton variant="contained" icon="FaRegTrashAlt" size="small"></IconButton>
+			<IconButton variant="contained" icon="FaRegTrashAlt"></IconButton>
+			<IconButton variant="contained" icon="FaRegTrashAlt" size="large"></IconButton>
+
+			<IconButton variant="outlined" icon="FaFileDownload" size="small"></IconButton>
+			<IconButton variant="outlined" icon="FaFileDownload"></IconButton>
+			<IconButton variant="outlined" icon="FaFileDownload" size="large"></IconButton>
+
+			<IconButton variant="text" icon="FaRegTimesCircle" size="small" color="error"></IconButton>
+			<IconButton variant="text" icon="FaRegTimesCircle" color="error"></IconButton>
+			<IconButton variant="text" icon="FaRegTimesCircle" color="error" size="large"></IconButton>
+
+			<IconButton variant="text" disabled icon="FaRegEnvelope" size="small"></IconButton>
+			<IconButton variant="contained" disabled icon="FaRegEnvelope"></IconButton>
+			<IconButton variant="outlined" disabled icon="FaRegEnvelope" size="large"></IconButton>
+
+			<Dialog
+				isOpen={isOpen}
+				header={
+					<>
+						<span>Initial settings dialog</span>
+						<Button variant="close" onClick={onCloseDialog}>Close</Button>
+					</>
+				}
+				content={
+					<>
+						<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
+						<ul className="listDialog">
+							<li>Single-line item</li>
+							<li>Single-line item</li>
+							<li>Single-line item</li>
+						</ul>
+					</>
+				}
+				footer={
+					<>
+						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
+						<Button variant="text" onClick={onCloseDialog}>OK</Button>
+					</>
+				}
+			/>
 		</div>
 	);
 };
