@@ -2,6 +2,7 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import { IconButton } from "../iconButton/iconButton";
+import { CollapseItems } from "../collapseItems/collapseItems";
 
 export const Header = () => {
 	const { t, i18n } = useTranslation();
@@ -32,7 +33,7 @@ export const Header = () => {
 			<Button variant="text" onClick={() => ChangeLang("ru")}>
 				{t("lang.ru")}
 			</Button>
-
+			<CollapseItems />
 			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
 			<IconButton variant="contained" icon="FaRegSave" color="success"></IconButton>
 			<IconButton variant="contained" icon="FaRegSave" color="success" size="large"></IconButton>
