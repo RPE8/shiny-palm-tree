@@ -1,7 +1,7 @@
 import "./button.scss";
 import Icon from "../button/icon";
 
-type ValidVariants = "text" | "outlined" | "contained" | "close";
+type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
 type ValidSizes = "small" | "medium" | "large";
 type Props = {
