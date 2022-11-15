@@ -13,7 +13,7 @@ function App() {
 		.then(console.log);
 
 	return (
-		<div className="App">
+		<div className="App" style={{ backgroundColor: "black" }}>
 			<Layout header={<Header />} topContent={<TopTable />} bottomContent={<BottomTable />}></Layout>
 		</div>
 	);
