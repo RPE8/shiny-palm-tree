@@ -29,10 +29,10 @@ export const Header = () => {
 			<Button variant="text" onClick = {
 				() => ChangeLang("ru")
 			}>{t("lang.ru")}</Button>
-			<IconButton variant="text" icon="FaRegSave" color="error" size="small"></IconButton>
+			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
 			<IconButton variant="contained" icon="FaRegTrashAlt" color="success"></IconButton>
-			<IconButton variant="outlined" icon="FaFileDownload" disabled size="large"></IconButton>
-			<IconButton variant="outlined" icon="FaFileDownload" size="large"></IconButton>
+			<IconButton variant="contained" icon="FaFileDownload" disabled size="large"></IconButton>
+			<IconButton variant="contained" icon="FaFileDownload" size="large"></IconButton>
 		</div>
 	);
 };

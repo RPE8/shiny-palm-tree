@@ -1,38 +1,54 @@
 import "./iconButton.scss";
-import { Button } from "../button/button";
 import * as Icons from "react-icons/fa"
 
-//see logos from https://react-icons.github.io/react-icons/icons?name=fa
+//see icons from https://react-icons.github.io/react-icons/icons?name=fa
 
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
 type ValidSizes = "small" | "medium" | "large";
 type Props = {
-	variant: ValidVariants,
-	icon: string;
 	size?: ValidSizes;
+	icon: string;
+	variant: ValidVariants;
 	color?: ValidColors;
-	onClick?: Function;
 	disabled?: boolean;
+	onClick?: Function;
 };
 
 export const IconButton = ({
-	icon,
 	variant,
+	size = "medium",
+	onClick,
+	icon,
 	color,
-	size,
 	disabled = false,
-	onClick
 }: Props) => {
-
+	let classes = `button button-${variant} iconButtonSize-${size}`;
+	if (color) {
+		classes += ` button-${color}`;
+	}
+	if (disabled) {
+		classes += ` button--disabled`;
+	}
+	console.log(classes);
+	// const classes = `button ${disabled ? " button--disabled" : ""}${
+	// 	color ? " button--" + color : ""
+	// }`;
 
 	const MyIcon = Icons[icon];
 	if (!MyIcon) {
-		console.error(`icon ${icon} wasn't found`)
+		console.error(`icon ${icon} wasn't found`);
 	}
 	return (
-		<Button
-			onClick = {onClick} variant={variant} color={color} disabled={disabled} size={size}>{MyIcon && <MyIcon/>}</Button>
-
-	)
-}
+		<button
+			className={classes}
+			onClick={() => {
+				console.log("button clicked");
+				if (disabled) return;
+				console.log("button is active");
+				onClick?.();
+			}}
+		>{MyIcon && <MyIcon/>}
+		</button>
+	);
+};
