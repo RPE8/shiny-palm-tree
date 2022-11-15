@@ -8,8 +8,8 @@ import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const onCloseDialog = () => {
-		setIsOpen(false);
+	const onToggleOpenDialog = (bOpen: boolean) => {
+		setIsOpen(bOpen);
 	};
 
 	const breadcrumbsItems = [
@@ -27,7 +27,7 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text" size="small" onClick={() => setIsOpen(true)}>
+			<Button variant="text" size="small" onClick={() => onToggleOpenDialog(true)}>
 				{t("size.small")}
 			</Button>
 			<Button variant="text" disabled>
@@ -72,7 +72,15 @@ export const Header = () => {
 				header={
 					<>
 						<span>Initial settings dialog</span>
-						<Button variant="close" onClick={onCloseDialog}>Close</Button>
+						<div className="closeDialogBtn">
+							<IconButton
+								className="closeDialogBtn"
+								variant="text"
+								icon="FaRegWindowClose"
+								color="error"
+								size="large"
+								onClick={() => onToggleOpenDialog(false)} />
+						</div>
 					</>
 				}
 				content={
@@ -87,8 +95,8 @@ export const Header = () => {
 				}
 				footer={
 					<>
-						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
-						<Button variant="text" onClick={onCloseDialog}>OK</Button>
+						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>NEXT</Button>
+						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>OK</Button>
 					</>
 				}
 			/>
