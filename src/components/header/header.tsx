@@ -69,19 +69,19 @@ export const Header = () => {
 
 			<Dialog
 				isOpen={isOpen}
-				headerProp={
+				header={
 					<>
 						<span>Initial settings dialog</span>
 						<Button variant="close" onClick={onCloseDialog}>Close</Button>
 					</>
 				}
-				contentProp={
+				content={
 					<>
-						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
+						<p><a href=""> MUI</a> / <a href="">Core</a> / <a href="">Breadcrumb</a></p>
 						<List items={listItems}></List>
 					</>
 				}
-				footerProp={
+				footer={
 					<>
 						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
 						<Button variant="text" onClick={onCloseDialog}>OK</Button>
