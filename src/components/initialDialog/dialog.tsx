@@ -1,26 +1,16 @@
 import Modal from "react-modal";
-import { Button } from "../button/button";
-import { List } from "../list/list";
-import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { HeaderDialog as Header } from "./header/header";
 import { ContentDialog as Content } from "./content/content";
 import { FooterDialog as Footer } from "./footer/footer";
 
-interface InitDialogType {
+interface DialogType {
 	isOpen: boolean;
-	onCloseDialog: () => void;
+	headerProp: JSX.Element | JSX.Element[];
+	contentProp: JSX.Element | JSX.Element[];
+	footerProp: JSX.Element | JSX.Element[];
 }
-const listItems = [
-	{ "key": "0", "value": "First" },
-	{ "key": 1, "value": "Second" },
-	{ "key": "2", "value": "Third" }
-];
-const breadcrumbsItems = [
-	{ "key": "0", "value": "MUI" },
-	{ "key": 1, "value": "Core" },
-	{ "key": "2", "value": "Breadcrumb" }
-];
-export default function Dialog(props: InitDialogType) {
+
+export default function Dialog(props: DialogType) {
 	return (
 		<div>
 			{props.isOpen && (
@@ -35,17 +25,14 @@ export default function Dialog(props: InitDialogType) {
 					}}
 					isOpen={props.isOpen}
 				>
-					<Header
-						onCloseDialog={props.onCloseDialog}
-						title="Initial settings dialog"
-					/>
+					<Header>
+						{props.headerProp}
+					</Header>
 					<Content>
-						<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
-						<List items={listItems}></List>
+						{props.contentProp}
 					</Content>
-					<Footer onCloseDialog={props.onCloseDialog}>
-						<Button variant="text" onClick={props.onCloseDialog}>NEXT</Button>
-						<Button variant="text" onClick={props.onCloseDialog}>OK</Button>
+					<Footer>
+						{props.footerProp}
 					</Footer>
 				</Modal>
 			)}

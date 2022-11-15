@@ -1,12 +1,25 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
+import { List } from "../list/list";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import {useState} from 'react';
 import Dialog from "../initialDialog/dialog";
 
 export const Header = () => {
+	const listItems = [
+		{ "key": "0", "value": "First" },
+		{ "key": 1, "value": "Second" },
+		{ "key": "2", "value": "Third" }
+	];
+	const breadcrumbsItems = [
+		{ "key": "0", "value": "MUI" },
+		{ "key": 1, "value": "Core" },
+		{ "key": "2", "value": "Breadcrumb" }
+	];
+
 	const [isOpen, setIsOpen] = useState(false);
-	const onCloseDialog = () => {
+	function onCloseDialog() {
 		setIsOpen(false);
 	};
 
@@ -37,7 +50,27 @@ export const Header = () => {
 			<Button variant="text" onClick={() => ChangeLang("ru")}>
 				{t("lang.ru")}
 			</Button>
-			<Dialog isOpen={isOpen} onCloseDialog={onCloseDialog}></Dialog>
+			<Dialog
+				isOpen={isOpen}
+				headerProp={
+					<>
+						<span>Initial settings dialog</span>
+						<Button variant="close" onClick={onCloseDialog}>Close</Button>
+					</>
+				}
+				contentProp={
+					<>
+						<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
+						<List items={listItems}></List>
+					</>
+				}
+				footerProp={
+					<>
+						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
+						<Button variant="text" onClick={onCloseDialog}>OK</Button>
+					</>
+				}
+			/>
 		</div>
 	);
 };

@@ -9,10 +9,10 @@ interface ListType {
 
 export const List = (props: ListType) => {
 	return (
-		<ul className="list">
-			{props.items.map(item => {
-				return <li key={item.key.toString()}>{item.value}</li>;
-			})}
-		</ul>
+		<div className="list">
+			{props.items.map(item => (
+				<div key={item.key.toString()}><span className="listItem">{item.value}</span></div>
+			))}
+		</div>
 	);
 }

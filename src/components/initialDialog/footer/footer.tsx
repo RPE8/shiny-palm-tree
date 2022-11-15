@@ -1,7 +1,6 @@
 import "./footer.scss";
 
 interface FooterDialogType {
-	onCloseDialog: () => void,
 	children: JSX.Element | JSX.Element[]
 }
 
