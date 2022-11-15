@@ -2,9 +2,8 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import { List } from "../list/list";
-import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import {useState} from 'react';
-import Dialog from "../initialDialog/dialog";
+import Dialog from "../dialog/dialog";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
@@ -12,11 +11,6 @@ export const Header = () => {
 		{ "key": "0", "value": "First" },
 		{ "key": 1, "value": "Second" },
 		{ "key": "2", "value": "Third" }
-	];
-	const breadcrumbsItems = [
-		{ "key": "0", "value": "MUI" },
-		{ "key": 1, "value": "Core" },
-		{ "key": "2", "value": "Breadcrumb" }
 	];
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +77,7 @@ export const Header = () => {
 				}
 				contentProp={
 					<>
-						<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
+						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
 						<List items={listItems}></List>
 					</>
 				}
