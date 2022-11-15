@@ -60,7 +60,31 @@ export const Header = () => {
 			<IconButton variant="contained" disabled icon="FaRegEnvelope"></IconButton>
 			<IconButton variant="outlined" disabled icon="FaRegEnvelope" size="large"></IconButton>
 
-			<Dialog isOpen={isOpen} onCloseDialog={onCloseDialog}></Dialog>
+			<Dialog
+				isOpen={isOpen}
+				headerProp={
+					<>
+						<span>Initial settings dialog</span>
+						<Button variant="close" onClick={onCloseDialog}>Close</Button>
+					</>
+				}
+				contentProp={
+					<>
+						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
+						<ul className="listDialog">
+							<li>Single-line item</li>
+							<li>Single-line item</li>
+							<li>Single-line item</li>
+						</ul>
+					</>
+				}
+				footerProp={
+					<>
+						<Button variant="text" onClick={onCloseDialog}>NEXT</Button>
+						<Button variant="text" onClick={onCloseDialog}>OK</Button>
+					</>
+				}
+			/>
 		</div>
 	);
 };

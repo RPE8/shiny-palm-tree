@@ -1,5 +1,3 @@
-import "./content.scss";
-
 interface ContentDialogType {
 	children: JSX.Element | JSX.Element[]
 }
