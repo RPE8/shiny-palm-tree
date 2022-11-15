@@ -4,6 +4,7 @@ import { Button } from "../button/button";
 import { HeaderDialog as Header } from "./header/header";
 import { ContentDialog as Content } from "./content/content";
 import { FooterDialog as Footer } from "./footer/footer";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 
 interface InitDialogType {
 	isOpen: boolean;
@@ -11,6 +12,12 @@ interface InitDialogType {
 }
 
 export default function Dialog(props: InitDialogType) {
+	const breadcrumbsItems = [
+		{ "key": "0", "value": "MUI" },
+		{ "key": 1, "value": "Core" },
+		{ "key": "2", "value": "Breadcrumb" }
+	];
+
 	return (
 		<div>
 			{props.isOpen && (
@@ -30,7 +37,7 @@ export default function Dialog(props: InitDialogType) {
 						title="Initial settings dialog"
 					/>
 					<Content>
-						<p><a className="fa fa-home" href=""> MUI</a> / <a className="fa fa-fire" href="">Core</a> / <a className="fa fa-game" href="">Breadcrumb</a></p>
+						<Breadcrumbs items={breadcrumbsItems}></Breadcrumbs>
 						<ul className="listDialog">
 							<li>Single-line item</li>
 							<li>Single-line item</li>
