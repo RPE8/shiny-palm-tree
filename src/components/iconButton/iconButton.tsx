@@ -1,5 +1,5 @@
 import "./iconButton.scss";
-import Icons from "react-icons/fa";
+import * as Icons from "react-icons/fa";
 
 //see icons for 'icon' property from https://react-icons.github.io/react-icons/icons?name=fa
 type ValidIcons = keyof typeof Icons;
