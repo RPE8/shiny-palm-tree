@@ -1,7 +1,7 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Dialog from "../dialog/dialog";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { IconButton } from "../iconButton/iconButton";
@@ -12,11 +12,23 @@ export const Header = () => {
 		setIsOpen(bOpen);
 	};
 
-	const breadcrumbsItems = [
-		{ "key": "0", "value": "MUI" },
-		{ "key": 1, "value": "Core" },
-		{ "key": "2", "value": "Breadcrumb" }
-	];
+	const [breadcrumbsData, setBreadcrumbsData] = useState([]);
+	async function loadBreadcrumbsData() {
+		fetch("/breadcrumbsData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(breadcrumbsData => {
+			setBreadcrumbsData(breadcrumbsData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadBreadcrumbsData();
+	}, []);
 
 	const { t, i18n } = useTranslation();
 
@@ -84,7 +96,7 @@ export const Header = () => {
 				}
 				content={
 					<>
-						<Breadcrumbs items={breadcrumbsItems} delimiter="/"></Breadcrumbs>
+						<Breadcrumbs items={breadcrumbsData} delimiter="/" />
 						<ul className="listDialog">
 							<li>Single-line item</li>
 							<li>Single-line item</li>
