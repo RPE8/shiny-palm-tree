@@ -1,12 +1,31 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
+import { List } from "../list/list";
 import {useState, useEffect} from 'react';
 import Dialog from "../dialog/dialog";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
+	const [listData, setListData] = useState([]);
+	async function loadListData() {
+		fetch("/listData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(listData => {
+			setListData(listData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadListData();
+	}, []);
+
 	const [isOpen, setIsOpen] = useState(false);
 	const onToggleOpenDialog = (bOpen: boolean) => {
 		setIsOpen(bOpen);
@@ -97,18 +116,14 @@ export const Header = () => {
 				content={
 					<>
 						<Breadcrumbs items={breadcrumbsData} delimiter="/" />
-						<ul className="listDialog">
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-						</ul>
+						<List items={listData}></List>
 					</>
 				}
 				footer={
-					<>
+					<div className="footerDialog">
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>NEXT</Button>
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>OK</Button>
-					</>
+					</div>
 				}
 			/>
 		</div>
