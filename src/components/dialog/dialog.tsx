@@ -1,7 +1,7 @@
 import "./dialog.scss";
 import Modal from "react-modal";
 
-interface DialogType {
+type DialogType = {
 	isOpen: boolean;
 	header: JSX.Element | JSX.Element[];
 	content: JSX.Element | JSX.Element[];

@@ -1,11 +1,13 @@
 type ValidDelimiters = "/" | ">" | "-";
-interface BreadcrumbsType {
+
+type BreadcrumbsItemType = {
+	key: number | string,
+	value: string,
+	icon?: string
+};
+type BreadcrumbsType = {
 	delimiter: ValidDelimiters,
-	items: Array<{
-		key: number | string,
-		value: string,
-		icon?: string
-	}>
+	items: Array<BreadcrumbsItemType>
 }
 
 export const Breadcrumbs = (props: BreadcrumbsType) => {
