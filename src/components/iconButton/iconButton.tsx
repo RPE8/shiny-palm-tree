@@ -13,7 +13,6 @@ type Props = {
 	color?: ValidColors;
 	disabled?: boolean;
 	onClick?: Function;
-	className?: string
 };
 
 export const IconButton = ({ variant, size = "medium", onClick, icon, color, disabled = false }: Props) => {

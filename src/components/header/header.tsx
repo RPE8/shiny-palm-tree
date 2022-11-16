@@ -1,11 +1,30 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
-import {useState} from 'react';
+import { List } from "../list/list";
+import {useState, useEffect} from 'react';
 import Dialog from "../dialog/dialog";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
+	const [listData, setListData] = useState([]);
+	async function loadListData() {
+		fetch("/listData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(listData => {
+			setListData(listData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadListData();
+	}, []);
+
 	const [isOpen, setIsOpen] = useState(false);
 	const onToggleOpenDialog = (bOpen: boolean) => {
 		setIsOpen(bOpen);
@@ -67,7 +86,6 @@ export const Header = () => {
 						<span>Initial settings dialog</span>
 						<div className="closeDialogBtn">
 							<IconButton
-								className="closeDialogBtn"
 								variant="text"
 								icon="FaRegWindowClose"
 								color="error"
@@ -79,18 +97,14 @@ export const Header = () => {
 				content={
 					<>
 						<p><a href=""> MUI</a> / <a href="">Core</a> / <a href="">Breadcrumb</a></p>
-						<ul className="listDialog">
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-							<li>Single-line item</li>
-						</ul>
+						<List items={listData}></List>
 					</>
 				}
 				footer={
-					<>
+					<div className="footerDialog">
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>NEXT</Button>
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>OK</Button>
-					</>
+					</div>
 				}
 			/>
 		</div>
