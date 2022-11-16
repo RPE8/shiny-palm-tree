@@ -34,8 +34,7 @@ export const IconButton = ({
 	// const classes = `button ${disabled ? " button--disabled" : ""}${
 	// 	color ? " button--" + color : ""
 	// }`;
-
-	const MyIcon = Icons[icon];
+	const MyIcon = Icons[icon as keyof typeof Icons];
 	if (!MyIcon) {
 		console.error(`icon ${icon} wasn't found`);
 	}
