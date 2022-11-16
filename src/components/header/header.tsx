@@ -2,7 +2,7 @@ import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
 import { List } from "../list/list";
-import {useState, useEffect} from 'react';
+import {useState, useEffect} from "react";
 import Dialog from "../dialog/dialog";
 import { IconButton } from "../iconButton/iconButton";
 
@@ -26,8 +26,8 @@ export const Header = () => {
 	}, []);
 
 	const [isOpen, setIsOpen] = useState(false);
-	const onToggleOpenDialog = (bOpen: boolean) => {
-		setIsOpen(bOpen);
+	const onToggleOpenDialog = () => {
+		setIsOpen(!isOpen);
 	};
 
 	const { t, i18n } = useTranslation();
@@ -39,7 +39,7 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text" size="small" onClick={() => onToggleOpenDialog(true)}>
+			<Button variant="text" size="small" onClick={onToggleOpenDialog}>
 				{t("size.small")}
 			</Button>
 			<Button variant="text" disabled>
@@ -90,7 +90,7 @@ export const Header = () => {
 								icon="FaRegWindowClose"
 								color="error"
 								size="large"
-								onClick={() => onToggleOpenDialog(false)} />
+								onClick={onToggleOpenDialog} />
 						</div>
 					</>
 				}
@@ -102,8 +102,8 @@ export const Header = () => {
 				}
 				footer={
 					<div className="footerDialog">
-						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>NEXT</Button>
-						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>OK</Button>
+						<Button variant="text" onClick={onToggleOpenDialog}>NEXT</Button>
+						<Button variant="text" onClick={onToggleOpenDialog}>OK</Button>
 					</div>
 				}
 			/>
