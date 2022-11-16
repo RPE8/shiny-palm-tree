@@ -86,7 +86,6 @@ export const Header = () => {
 						<span>Initial settings dialog</span>
 						<div className="closeDialogBtn">
 							<IconButton
-								className="closeDialogBtn"
 								variant="text"
 								icon="FaRegWindowClose"
 								color="error"
