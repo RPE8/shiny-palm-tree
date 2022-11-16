@@ -102,10 +102,10 @@ export const Header = () => {
 					</>
 				}
 				footer={
-					<>
+					<div className="footerDialog">
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>NEXT</Button>
 						<Button variant="text" onClick={() => onToggleOpenDialog(false)}>OK</Button>
-					</>
+					</div>
 				}
 			/>
 		</div>

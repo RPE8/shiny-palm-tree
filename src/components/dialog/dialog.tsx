@@ -25,9 +25,7 @@ export default function Dialog(props: DialogType) {
 				>
 					{props.header}
 					{props.content}
-					<div className="footerDialog">
-						{props.footer}
-					</div>
+					{props.footer}
 				</Modal>
 			)}
 		</div>
