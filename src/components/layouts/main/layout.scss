@@ -1,7 +1,8 @@
 $color-1: white;
 
 .container {
-	background-color: $color-1;
+	background-color: inherit;
+	color: $color-1;
 	height: 100%;
 	display: grid;
 	grid-template-areas:
@@ -23,6 +24,6 @@ $color-1: white;
 	}
 
 	> * {
-		border: 1px black solid;
+		border: 1px $color-1 solid;
 	}
 }
