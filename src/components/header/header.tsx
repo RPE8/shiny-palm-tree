@@ -4,6 +4,7 @@ import { Button } from "../button/button";
 import { List } from "../list/list";
 import {useState, useEffect} from 'react';
 import Dialog from "../dialog/dialog";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
@@ -29,6 +30,24 @@ export const Header = () => {
 	const onToggleOpenDialog = (bOpen: boolean) => {
 		setIsOpen(bOpen);
 	};
+
+	const [breadcrumbsData, setBreadcrumbsData] = useState([]);
+	async function loadBreadcrumbsData() {
+		fetch("/breadcrumbsData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(breadcrumbsData => {
+			setBreadcrumbsData(breadcrumbsData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadBreadcrumbsData();
+	}, []);
 
 	const { t, i18n } = useTranslation();
 
@@ -96,7 +115,7 @@ export const Header = () => {
 				}
 				content={
 					<>
-						<p><a href=""> MUI</a> / <a href="">Core</a> / <a href="">Breadcrumb</a></p>
+						<Breadcrumbs items={breadcrumbsData} delimiter="/" />
 						<List items={listData}></List>
 					</>
 				}
