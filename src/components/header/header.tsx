@@ -33,25 +33,25 @@ export const Header = () => {
 				{t("lang.ru")}
 			</Button>
 
-			<IconButton variant="contained" icon="FaRegSave" color="success" size="small"></IconButton>
-			<IconButton variant="contained" icon="FaRegSave" color="success"></IconButton>
-			<IconButton variant="contained" icon="FaRegSave" color="success" size="large"></IconButton>
+			<IconButton variant="contained" icon="add" color="success" size="small"></IconButton>
+			<IconButton variant="contained" icon="add" color="success"></IconButton>
+			<IconButton variant="contained" icon="add" color="success" size="large"></IconButton>
 
-			<IconButton variant="contained" icon="FaRegTrashAlt" size="small"></IconButton>
-			<IconButton variant="contained" icon="FaRegTrashAlt"></IconButton>
-			<IconButton variant="contained" icon="FaRegTrashAlt" size="large"></IconButton>
+			<IconButton variant="contained" icon="disk" size="small"></IconButton>
+			<IconButton variant="contained" icon="disk"></IconButton>
+			<IconButton variant="contained" icon="disk" size="large"></IconButton>
 
-			<IconButton variant="outlined" icon="FaFileDownload" size="small"></IconButton>
-			<IconButton variant="outlined" icon="FaFileDownload"></IconButton>
-			<IconButton variant="outlined" icon="FaFileDownload" size="large"></IconButton>
+			<IconButton variant="contained" icon="trash" size="small"></IconButton>
+			<IconButton variant="contained" icon="trash"></IconButton>
+			<IconButton variant="contained" icon="trash" size="large"></IconButton>
 
-			<IconButton variant="text" icon="FaRegTimesCircle" size="small" color="error"></IconButton>
-			<IconButton variant="text" icon="FaRegTimesCircle" color="error"></IconButton>
-			<IconButton variant="text" icon="FaRegTimesCircle" color="error" size="large"></IconButton>
+			<IconButton variant="contained" icon="cross" size="small" color="error"></IconButton>
+			<IconButton variant="contained" icon="cross" color="error"></IconButton>
+			<IconButton variant="contained" icon="cross" color="error" size="large"></IconButton>
 
-			<IconButton variant="text" disabled icon="FaRegEnvelope" size="small"></IconButton>
-			<IconButton variant="contained" disabled icon="FaRegEnvelope"></IconButton>
-			<IconButton variant="outlined" disabled icon="FaRegEnvelope" size="large"></IconButton>
+			<IconButton variant="contained" icon="menu-burger" size="small"></IconButton>
+			<IconButton variant="contained" icon="menu-burger"></IconButton>
+			<IconButton variant="contained" icon="menu-burger" size="large"></IconButton>
 		</div>
 	);
 };
