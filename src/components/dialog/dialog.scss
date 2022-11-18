@@ -1,6 +1,24 @@
+.headerDialog {
+	height: 10%;
+}
+.contentDialog {
+	height: 80%;
+	overflow-y: auto;
+}
 .footerDialog {
-	bottom: 0;
-	right: 0;
-	position: absolute;
+	float: right;
 	display: flex;
+	width: auto;
+	height: auto;
+}
+.modalDialog {
+	position: fixed;
+	background-color: rgb(255, 255, 255);
+}
+.overlayDialog {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }

@@ -13,12 +13,15 @@ export default function Dialog(props: DialogType) {
 		<div>
 			{props.isOpen && (
 				<Modal
+					className="modalDialog"
+					overlayClassName="overlayDialog"
 					style={{
 						content: {
 							width: "40%",
 							height: "40%",
 							top: "30%",
-							left: "30%"
+							left: "30%",
+							padding: "15px"
 						}
 					}}
 					isOpen={props.isOpen}

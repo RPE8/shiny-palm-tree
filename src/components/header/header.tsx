@@ -101,7 +101,7 @@ export const Header = () => {
 			<Dialog
 				isOpen={isOpen}
 				header={
-					<>
+					<div className="headerDialog">
 						<span>Initial settings dialog</span>
 						<div className="closeDialogBtn">
 							<IconButton
@@ -111,13 +111,13 @@ export const Header = () => {
 								size="large"
 								onClick={() => onToggleOpenDialog(false)} />
 						</div>
-					</>
+					</div>
 				}
 				content={
-					<>
+					<div className="contentDialog">
 						<Breadcrumbs items={breadcrumbsData} delimiter="/" />
 						<List items={listData}></List>
-					</>
+					</div>
 				}
 				footer={
 					<div className="footerDialog">

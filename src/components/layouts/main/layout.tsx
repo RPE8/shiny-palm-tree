@@ -12,7 +12,7 @@ type LayoutProps = {
 
 export const layout = ({ header, topContent, bottomContent }: LayoutProps) => {
 	return (
-		<div className="container">
+		<div className="container" id="container">
 			<div className="container__header">{header}</div>
 			<div className="container__topContent">{topContent}</div>
 			<div className="container__bottomContainer">{bottomContent}</div>
