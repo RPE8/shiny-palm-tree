@@ -14,7 +14,7 @@ type Props = {
 	onClick?: Function;
 };
 
-const oStyles = {
+const oSvgIconSizeStyle = {
 	width: "80%",
 	height: "80%"
 };
@@ -43,7 +43,7 @@ export const IconButton = ({ variant, size = "medium", onClick, icon, color, dis
 				onClick?.();
 			}}
 		>
-			<img src={SvgIcon} alt={SvgIcon} style={oStyles}/>
+			<img src={SvgIcon} alt={SvgIcon} style={oSvgIconSizeStyle}/>
 		</button>
 	);
 };
