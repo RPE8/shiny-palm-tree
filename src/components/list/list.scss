@@ -1,0 +1,9 @@
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 5px 10px;
+}
+.list__item {
+	margin-left: 20px;
+}

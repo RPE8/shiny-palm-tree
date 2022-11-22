@@ -1,9 +1,54 @@
 import "./header.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/button";
+import { List } from "../list/list";
+import {useState, useEffect} from "react";
+import Dialog from "../dialog/dialog";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { IconButton } from "../iconButton/iconButton";
 
 export const Header = () => {
+	const [listData, setListData] = useState([]);
+	async function loadListData() {
+		fetch("/listData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(listData => {
+			setListData(listData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadListData();
+	}, []);
+
+	const [isOpen, setIsOpen] = useState(false);
+	const onToggleOpenDialog = () => {
+		setIsOpen(!isOpen);
+	};
+
+	const [breadcrumbsData, setBreadcrumbsData] = useState([]);
+	async function loadBreadcrumbsData() {
+		fetch("/breadcrumbsData", {
+			method: "GET"
+		})
+		.then(res => res.json())
+		.then(breadcrumbsData => {
+			setBreadcrumbsData(breadcrumbsData.data);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+	}
+
+	useEffect(() => {
+		loadBreadcrumbsData();
+	}, []);
+
 	const { t, i18n } = useTranslation();
 
 	function ChangeLang(lang: string) {
@@ -13,7 +58,7 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<h1>{t("appHeader")}</h1>
-			<Button variant="text" size="small">
+			<Button variant="text" size="small" onClick={onToggleOpenDialog}>
 				{t("size.small")}
 			</Button>
 			<Button variant="text" disabled>
@@ -52,6 +97,35 @@ export const Header = () => {
 			<IconButton variant="text" disabled icon="FaRegEnvelope" size="small"></IconButton>
 			<IconButton variant="contained" disabled icon="FaRegEnvelope"></IconButton>
 			<IconButton variant="outlined" disabled icon="FaRegEnvelope" size="large"></IconButton>
+
+			<Dialog
+				isOpen={isOpen}
+				header={
+					<div className="headerDialog">
+						<span>Initial settings dialog</span>
+						<div className="closeDialogBtn">
+							<IconButton
+								variant="text"
+								icon="FaRegWindowClose"
+								color="error"
+								size="large"
+								onClick={onToggleOpenDialog} />
+						</div>
+					</div>
+				}
+				content={
+					<div className="contentDialog">
+						<Breadcrumbs items={breadcrumbsData} delimiter="/" />
+						<List items={listData}></List>
+					</div>
+				}
+				footer={
+					<div className="footerDialog">
+						<Button variant="text" onClick={onToggleOpenDialog}>NEXT</Button>
+						<Button variant="text" onClick={onToggleOpenDialog}>OK</Button>
+					</div>
+				}
+			/>
 		</div>
 	);
 };

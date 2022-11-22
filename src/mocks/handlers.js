@@ -15,4 +15,28 @@ export const handlers = [
 			})
 		);
 	}),
+	rest.get("/listData", (req, res, ctx) => {
+		return res(
+			ctx.status(200),
+			ctx.json({
+				data: [
+					{ "key": "0", "value": "First" },
+					{ "key": 1, "value": "Second" },
+					{ "key": "2", "value": "Third" }
+				]
+			})
+		);
+	}),
+	rest.get("/breadcrumbsData", (req, res, ctx) => {
+		return res(
+			ctx.status(200),
+			ctx.json({
+				data: [
+					{ "key": "0", "value": "MUI" },
+					{ "key": 1, "value": "Core" },
+					{ "key": "2", "value": "Breadcrumb" }
+				]
+			})
+		);
+	}),
 ];

@@ -15,6 +15,7 @@
     "i18next-http-backend": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-i18next": "^12.0.0",
     "react-icons": "^4.6.0",
     "react-scripts": "5.0.1",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.13.1",
     "eslint-config-prettier": "^8.5.0",
     "msw": "^0.48.0",
     "prettier": "2.7.1"
