@@ -33,25 +33,25 @@ export const Header = () => {
 				{t("lang.ru")}
 			</Button>
 
-			<IconButton variant="contained" icon="add" color="success" size="small"></IconButton>
-			<IconButton variant="contained" icon="add" color="success"></IconButton>
-			<IconButton variant="contained" icon="add" color="success" size="large"></IconButton>
+			<IconButton variant="contained" icon="add" color="success" fill="red" size="small"></IconButton>
+			<IconButton variant="contained" icon="add" color="success" fill="red"></IconButton>
+			<IconButton variant="contained" icon="add" color="success" fill="red" size="large"></IconButton>
 
-			<IconButton variant="contained" icon="disk" size="small"></IconButton>
-			<IconButton variant="contained" icon="disk"></IconButton>
-			<IconButton variant="contained" icon="disk" size="large"></IconButton>
+			<IconButton variant="contained" icon="disk" size="small" fill="black"></IconButton>
+			<IconButton variant="contained" icon="disk" fill="black"></IconButton>
+			<IconButton variant="contained" icon="disk" size="large" fill="black"></IconButton>
 
-			<IconButton variant="contained" icon="trash" size="small"></IconButton>
-			<IconButton variant="contained" icon="trash"></IconButton>
-			<IconButton variant="contained" icon="trash" size="large"></IconButton>
+			<IconButton variant="contained" icon="trash" size="small" fill="green"></IconButton>
+			<IconButton variant="contained" icon="trash" fill="green"></IconButton>
+			<IconButton variant="contained" icon="trash" size="large" fill="green"></IconButton>
 
 			<IconButton variant="contained" icon="cross" size="small" color="error"></IconButton>
 			<IconButton variant="contained" icon="cross" color="error"></IconButton>
 			<IconButton variant="contained" icon="cross" color="error" size="large"></IconButton>
 
-			<IconButton variant="contained" icon="menu-burger" size="small"></IconButton>
-			<IconButton variant="contained" icon="menu-burger"></IconButton>
-			<IconButton variant="contained" icon="menu-burger" size="large"></IconButton>
+			<IconButton variant="contained" icon="menu-burger" size="small" fill="purple"></IconButton>
+			<IconButton variant="contained" icon="menu-burger" fill="purple"></IconButton>
+			<IconButton variant="contained" icon="menu-burger" size="large" fill="purple"></IconButton>
 		</div>
 	);
 };

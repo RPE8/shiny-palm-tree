@@ -5,9 +5,11 @@ type ValidIcons = keyof typeof Icons;
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
 type ValidSizes = "small" | "medium" | "large";
+type ValidFillColors = "red" | "blue" | "green" | "purple" | "black";
 type Props = {
 	size?: ValidSizes;
 	icon: ValidIcons;
+	fill?: ValidFillColors;
 	variant: ValidVariants;
 	color?: ValidColors;
 	disabled?: boolean;
@@ -19,7 +21,7 @@ const oSvgIconSizeStyle = {
 	height: "80%"
 };
 
-export const IconButton = ({ variant, size = "medium", onClick, icon, color, disabled = false }: Props) => {
+export const IconButton = ({ variant, size = "medium", onClick, icon, color, disabled = false, fill = "blue" }: Props) => {
 	let classes = `iconButton button-${variant} iconButtonSize-${size}`;
 	if (color) {
 		classes += ` button-${color}`;
@@ -33,6 +35,8 @@ export const IconButton = ({ variant, size = "medium", onClick, icon, color, dis
 	if (!SvgIcon) {
 		console.error(`icon ${icon} wasn't found`);
 	}
+
+	const sIconFillColorStyle = `fillColor-${fill}`;
 	return (
 		<button
 			className={classes}
@@ -43,7 +47,7 @@ export const IconButton = ({ variant, size = "medium", onClick, icon, color, dis
 				onClick?.();
 			}}
 		>
-			<img src={SvgIcon} alt={SvgIcon} style={oSvgIconSizeStyle}/>
+			<img className={sIconFillColorStyle} src={SvgIcon} alt={SvgIcon} style={oSvgIconSizeStyle}/>
 		</button>
 	);
 };

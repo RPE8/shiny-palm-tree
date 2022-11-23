@@ -133,3 +133,23 @@
 		height: 2rem;
 	}
 }
+
+.fillColor-blue {
+	filter: invert(33%) sepia(89%) saturate(4590%) hue-rotate(219deg) brightness(99%) contrast(104%);
+}
+
+.fillColor-red {
+	filter: invert(15%) sepia(99%) saturate(6457%) hue-rotate(359deg) brightness(106%) contrast(111%);
+}
+
+.fillColor-black {
+	filter: invert(0%) sepia(100%) saturate(385%) hue-rotate(222deg) brightness(99%) contrast(107%);
+}
+
+.fillColor-green {
+	filter: invert(22%) sepia(99%) saturate(2873%) hue-rotate(140deg) brightness(103%) contrast(102%);
+}
+
+.fillColor-purple {
+	filter: invert(23%) sepia(96%) saturate(7344%) hue-rotate(283deg) brightness(83%) contrast(115%);
+}
