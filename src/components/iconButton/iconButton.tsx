@@ -1,21 +1,27 @@
 import "./iconButton.scss";
-import * as Icons from "react-icons/fa";
+import Icons from "./svgAggregator.js";
 
-//see icons for 'icon' property from https://react-icons.github.io/react-icons/icons?name=fa
 type ValidIcons = keyof typeof Icons;
 type ValidVariants = "text" | "outlined" | "contained";
 type ValidColors = "success" | "error";
 type ValidSizes = "small" | "medium" | "large";
+type ValidFillColors = "red" | "blue" | "green" | "purple" | "black";
 type Props = {
 	size?: ValidSizes;
 	icon: ValidIcons;
+	fill?: ValidFillColors;
 	variant: ValidVariants;
 	color?: ValidColors;
 	disabled?: boolean;
 	onClick?: Function;
 };
 
-export const IconButton = ({ variant, size = "medium", onClick, icon, color, disabled = false }: Props) => {
+const oSvgIconSizeStyle = {
+	width: "80%",
+	height: "80%"
+};
+
+export const IconButton = ({ variant, size = "medium", onClick, icon, color, disabled = false, fill = "blue" }: Props) => {
 	let classes = `iconButton button-${variant} iconButtonSize-${size}`;
 	if (color) {
 		classes += ` button-${color}`;
@@ -24,11 +30,13 @@ export const IconButton = ({ variant, size = "medium", onClick, icon, color, dis
 		classes += ` button--disabled`;
 	}
 	console.log(classes);
-	// const classes = `button ${disabled ? " button--disabled" : ""}${
-	// 	color ? " button--" + color : ""
-	// }`;
 
-	const MyIcon = Icons[icon];
+	const SvgIcon = Icons[icon];
+	if (!SvgIcon) {
+		console.error(`icon ${icon} wasn't found`);
+	}
+
+	const sIconFillColorStyle = `fillColor-${fill}`;
 	return (
 		<button
 			className={classes}
@@ -39,7 +47,7 @@ export const IconButton = ({ variant, size = "medium", onClick, icon, color, dis
 				onClick?.();
 			}}
 		>
-			{MyIcon && <MyIcon />}
+			<img className={sIconFillColorStyle} src={SvgIcon} alt={SvgIcon} style={oSvgIconSizeStyle}/>
 		</button>
 	);
 };
